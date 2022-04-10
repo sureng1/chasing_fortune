@@ -63,6 +63,12 @@ export const constantRoutes = [
     meta: { title: 'Example', icon: 'el-icon-s-help' },
     children: [
       {
+        path: 'example',
+        name: 'Example',
+        component: () => import('@/views/example/ExampleView.vue'),
+        meta: { title: 'ExampleSub', icon: 'table' }
+      },
+      {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
@@ -77,6 +83,27 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    path: '/stock',
+    component: Layout,
+    redirect: '/stock/table',
+    name: 'Stock',
+    meta: { title: 'Stock', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: 'Table', icon: 'table' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: 'Tree', icon: 'tree' }
+      }
+    ]
+  },
   {
     path: '/form',
     component: Layout,
