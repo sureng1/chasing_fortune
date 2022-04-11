@@ -84,6 +84,21 @@ export const constantRoutes = [
   },
 
   {
+    path: '/items',
+    component: Layout,
+    redirect: '/items/list',
+    name: 'items',
+    meta: { title: '货品', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/items/ItemListView.vue'),
+        meta: { title: '货品列表', icon: 'table' }
+      }
+    ]
+  },
+  {
     path: '/stock',
     component: Layout,
     redirect: '/stock/table',
