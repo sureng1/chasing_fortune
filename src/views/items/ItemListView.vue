@@ -70,6 +70,8 @@
 </template>
 
 <script>
+import { listItems } from '@/api/table'
+
 export default {
   data() {
     return {
@@ -153,6 +155,7 @@ export default {
   methods: {
     getData: function(val) {
       console.log(val, 'todo load more')
+      listItems()
       // get more data
     },
     updateItem: function(val) {
